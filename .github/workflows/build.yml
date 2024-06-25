@@ -1,0 +1,16 @@
+name: Build Next app
+on: push
+jobs:
+  deploy:
+    name: build app next
+    runs-on: ${{ matrix.os }}
+    strategy:
+      max-parallel: 1
+      matrix:
+        node-version: ['18.18.0']
+        os: [ubuntu-latest]
+    steps:
+      - name: npm install
+        run: npm i
+      - name: Build
+        run : npm run build
