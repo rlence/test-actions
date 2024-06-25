@@ -1,0 +1,6 @@
+node_modules
+.aio
+.aws.tmp.creds.json
+.env
+dist
+.next
