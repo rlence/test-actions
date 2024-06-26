@@ -10,7 +10,8 @@ jobs:
         node-version: ['18.18.0']
         os: [ubuntu-latest]
     steps:
-      - name: npm install
-        run: npm i
-      - name: Build
-        run : npm run build
+      - name: build
+        uses: adobe/aio-apps-action@3.3.0
+        with:
+          os: ${{ matrix.os }}
+          command: build
