@@ -37,6 +37,7 @@ const createActionsFolder = () => {
         fs.mkdir(`${PATH}`, (err) => {
             if (err) {
                 console.log('Error creating directory', err);
+                return;
             }
     
             fs.mkdir(`${PATH}/generic-temp`, (err) => {
@@ -62,15 +63,17 @@ const createActionsFolder = () => {
 const main = () => {
     console.log('Creating directory...')
     if(fs.existsSync('dist/application/actions')) {
-        fs.rm('dist/application/actions', {recursive: true, force: true}, (err) => {
+        fs.rmSync('dist/application/actions', {recursive: true, force: true}, (err) => {
             if (err) {
                 console.error('Error to remove directory', err);
                 return;
             }
-            createActionsFolder();
+            return createActionsFolder();
         });
     }
+    return createActionsFolder();
 
 };
+
 
 main();

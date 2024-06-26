@@ -25,3 +25,8 @@ application:
             annotations:
               require-adobe-auth: true
               final: true
+  hooks:
+    pre-app-build: npm install
+    post-app-build: npm run build:actions
+    build-actions: npm run test
+    build-static: npm run build

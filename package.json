@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/script.js",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:actions": "node scripts/script.js",
+    "test": "echo test"
   },
   "dependencies": {
     "next": "14.2.4",
